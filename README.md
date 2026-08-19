@@ -1,3 +1,4 @@
+<h1>Particle Editor is a Fork of wick editor - Official Wick editor: https://github.com/Wicklets</h1>
 <h1 align="center">
   <br>
   <a href="https://editor.wickeditor.com/"><img src=".github/images/logo.svg" alt="Wick Editor" width="25%"></a>
@@ -18,7 +19,7 @@
     <img src="https://img.shields.io/twitter/follow/wickeditor?style=social&logo=twitter" alt="follow on Twitter"></a>
 </p>
 
-<h1>Wick Editor</h1>
+<h1>Particle Editor</h1>
 
 The Wick Editor is a free and open-source tool for creating games, animations, and everything in-between. It's designed to be the most accessible tool for creating multimedia projects on the web.
 
