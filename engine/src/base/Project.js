@@ -1159,6 +1159,7 @@ Wick.Project = class extends Wick.Base {
      * Creates a symbol from the objects currently selected.
      * @param {string} identifier - the identifier to give the new symbol
      * @param {string} type - "Clip" or "Button"
+     * @param {string} clipType - "movieClip" or "graphic"
      */
     createClipFromSelection(args) {
         if (!args) {

@@ -107,6 +107,7 @@ Wick.Selection = class extends Wick.Base {
             "tweenMethod",
             "scaleX",
             "scaleY",
+            "clipType",
             "animationType",
             "singleFrameNumber",
             "isSynced",
@@ -410,6 +411,26 @@ Wick.Selection = class extends Wick.Base {
     }
 
     /**
+     * The clip type of a clip.
+     * @type {string}
+     */
+    get clipType () {
+        if (this.getSelectedObject() && this.selectionType === 'clip') {
+            return this.getSelectedObject().clipType;
+        } else {
+            return null;
+        }
+    }
+
+    set clipType (newType) {
+        if (this.getSelectedObject()) {
+            this.getSelectedObject().clipType = newType;
+        } else {
+            console.error("Cannot set the clip type of multiple objects...");
+        }
+    }
+
+    /**
      * The animation type of a clip.
      * @type {string}
      */
@@ -659,7 +680,7 @@ Wick.Selection = class extends Wick.Base {
     }
 
     set isSynced (syncBool) {
-        if (!typeof syncBool === "boolean") return;
+        if (typeof syncBool !== "boolean") return;
 
         if (this.selectionType === "clip") {
             this.getSelectedObject().isSynced = syncBool;

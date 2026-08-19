@@ -33,6 +33,7 @@ class MakeAnimated extends Component {
     this.state = {
       name: "",
       makeAsset: true,
+      symbolType: "movieclip",
     }
   }
 
@@ -47,6 +48,13 @@ class MakeAnimated extends Component {
   updateClipName = (newName) => {
     this.setState({
       name: newName,
+    }); 
+  }
+
+    // Updates the selected symbol type.
+  updateSymbolType = (type) => {
+    this.setState({
+      symbolType: type,
     }); 
   }
 
@@ -65,7 +73,10 @@ class MakeAnimated extends Component {
       className="make-animated-modal-body"
       overlayClassName="make-animated-modal-overlay">
         <div id="make-animated-modal-interior-content">
-          <div id="make-animated-modal-title">Make Animated</div>
+          <div id="make-animated-modal-title">HELLO TEST 123!</div>
+          <div style={{color: 'red', fontSize: '20px'}}>
+            TEST DROPDOWN
+         </div>
           <div id="make-animated-modal-name-input">
             <WickInput
               type="text"
@@ -73,6 +84,25 @@ class MakeAnimated extends Component {
               onChange={this.updateClipName}
               placeholder={this.placeholderName} />
           </div>
+          <div id="make-animated-symbol">
+  <div id="make-animated-symbol-title">
+    Symbol
+  </div>
+
+  <div id="make-animated-symbol-type">
+    <div id="make-animated-symbol-type-label">
+      Type
+    </div>
+
+    <select
+      value={this.state.symbolType}
+      onChange={(e) => this.updateSymbolType(e.target.value)}
+    >
+      <option value="movieclip">Movie Clip</option>
+      <option value="graphic">Graphic</option>
+    </select>
+  </div>
+</div>
           <ObjectInfo 
           title="CLIP" 
           rows={[

@@ -1,7 +1,7 @@
 {
-  "name": "wick-editor",
-  "version": "1.19.3",
-  "author": "Wicklets LLC",
+  "name": "Particle-editor",
+  "version": "1.0.0",
+  "author": "Particlemations",
   "private": true,
   "homepage": "https://stickmanred.github.io/wick-editor",
   "main": "./public/electron.js",
@@ -57,7 +57,7 @@
   },
   "build": {
     "appId": "com.wicklets.wickEditor",
-    "productName": "Wick Editor",
+    "productName": "Particle Editor",
     "icon": "public/icon.icns",
     "afterSign": "electron-builder-notarize",
     "copyright": "© 2016-2020 Wicklets LLC",

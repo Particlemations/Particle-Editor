@@ -34,11 +34,11 @@ var classNames = require('classnames');
 class WelcomeModal extends Component {
   constructor () {
     super();
-    this.forumPost = "https://forum.wickeditor.com/t/scratch-like-cursor/18102";
+    this.forumPost = "https://github.com/CaptParticles/Particles-Editor"
     this.updates = [
-      "Frame Picker",
-      "Outside-Clip Viewer",
-      "Audio Scrubbing",
+      "Candlestick Bug Fixes",
+      "Adobe Flash/Animate Features",
+      "StickmanRed's Fork Features",
     ] // No More than 3
 
     /*let t1 = ["Guy de Bree", "Dimp", "Hyun's Dojo"]
@@ -81,7 +81,7 @@ class WelcomeModal extends Component {
             <img className="welcome-modal-mobile-image" alt="Night sky with mountains, clouds, a moon and stars" src={nightImageShort}/>
           </div>
           <div className="welcome-modal-mobile-content">
-            <div className="welcome-modal-title small-modal">A Wick Editor Fork</div>
+            <div className="welcome-modal-title small-modal">A Fork of the Wick Editor</div>
             <div className="welcome-modal-version small-modal"><a className="welcome-modal-highlight" target="_blank" rel="noopener noreferrer" href={this.forumPost}>Version {this.props.editorVersion}</a></div>
             {this.renderUpdates("small-modal")}
             {/*this.renderPatreonSupporters()*/}
@@ -109,19 +109,19 @@ class WelcomeModal extends Component {
             <img id="welcome-image" alt="Night sky with mountains, clouds, a moon and stars" src={coolField} />
           </div>
           <div id="welcome-message-container" className="modal-main-container">
-            <div id="welcome-modal-title" className="welcome-modal-item">Welcome To Wick Editor!</div>
-            <div id="welcome-modal-version" className="welcome-modal-item"><a className="welcome-modal-highlight" target="_blank" rel="noopener noreferrer" href={this.forumPost}>StickmanRed's Fork</a></div>
-            <div id="welcome-modal-subtitle" className="welcome-modal-item">This fork includes:</div>
+            <div id="welcome-modal-title" className="welcome-modal-item">Welcome To Particle Editor</div>
+            <div id="welcome-modal-version" className="welcome-modal-item"><a className="welcome-modal-highlight" target="_blank" rel="noopener noreferrer" href={this.forumPost}>Version {this.props.editorVersion}</a></div>
+            <div id="welcome-modal-subtitle" className="welcome-modal-item">This fork has:</div>
             <div id="welcome-modal-message" className="welcome-modal-item">
               {this.renderUpdates()}
               {/*this.renderPatreonSupporters("desktop-modal")*/}
             </div>
-            <div id="welcome-modal-forum-link" className="welcome-modal-item">Check out <a className="welcome-modal-highlight" target="_blank" rel="noopener noreferrer" href="https://forum.wickeditor.com/t/candlestick-1-0-a-new-fork-of-wick-editor/23174">Candlestick</a>, a more actively maintained fork of Wick Editor!</div>
+            <div id="welcome-modal-forum-link" className="welcome-modal-item">Check out <a className="welcome-modal-highlight" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@battleforavip">Our YouTube Channel!</a> Particlemations</div>
             <div id="welcome-modal-footer">
               <div id="welcome-modal-accept">
                 <ActionButton
                   className="welcome-modal-button"
-                  color='green'
+                  color='red'
                   action={this.props.toggle}
                   text="Try it"
                   />

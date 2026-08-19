@@ -386,6 +386,43 @@ describe('Wick.Clip', function() {
             expect(clip.timeline.playheadPosition).to.equal(2);
         });
 
+        it('should deserialize clipType without crashing snapshot recovery', function() {
+            var clip = new Wick.Clip({ clipType: 'graphic' });
+            clip.animationType = 'single';
+            clip.singleFrameNumber = 3;
+
+            var data = clip.serialize();
+            var restored = Wick.Base.fromData(data);
+
+            expect(restored.clipType).to.equal('graphic');
+            expect(restored.animationType).to.equal('single');
+            expect(restored.singleFrameNumber).to.equal(3);
+        });
+
+        it('should keep a graphic in single frame mode fixed to the selected internal frame', function() {
+            var project = new Wick.Project();
+            var graphic = new Wick.Clip();
+            graphic.clipType = 'graphic';
+            graphic.animationType = 'single';
+            graphic.timeline.addLayer(new Wick.Layer());
+            graphic.timeline.layers[0].addFrame(new Wick.Frame({start:1}));
+            graphic.timeline.layers[0].addFrame(new Wick.Frame({start:2}));
+            graphic.timeline.layers[0].addFrame(new Wick.Frame({start:3}));
+            graphic.singleFrameNumber = 2;
+
+            expect(graphic.timeline.playheadPosition).to.equal(2);
+
+            project.addObject(graphic);
+            project.tick();
+            expect(graphic.timeline.playheadPosition).to.equal(2);
+
+            graphic.singleFrameNumber = 3;
+            expect(graphic.timeline.playheadPosition).to.equal(3);
+
+            project.tick();
+            expect(graphic.timeline.playheadPosition).to.equal(3);
+        });
+
         it('script errors from child frame should bubble up', function() {
             var project = new Wick.Project();
             var clip = new Wick.Clip();
@@ -1732,6 +1769,46 @@ describe('Wick.Clip', function() {
                     }
                 }
             });
+        });
+
+        it('should keep clipType state on the real clip when edited through selection', function () {
+            let project = new Wick.Project();
+            let clip = new Wick.Clip();
+
+            project.activeFrame.addClip(clip);
+            project.selection.select(clip);
+
+            project.selection.clipType = 'graphic';
+            expect(clip.clipType).to.equal('graphic');
+            expect(project.selection.clipType).to.equal('graphic');
+
+            project.selection.clear();
+            project.selection.select(clip);
+            expect(project.selection.clipType).to.equal('graphic');
+
+            project.selection.clipType = 'movieClip';
+            expect(clip.clipType).to.equal('movieClip');
+            expect(clip.animationType).to.equal('loop');
+        });
+
+        it('should keep clipType state on the real clip when edited through selection', function () {
+            let project = new Wick.Project();
+            let clip = new Wick.Clip();
+
+            project.activeFrame.addClip(clip);
+            project.selection.select(clip);
+
+            project.selection.clipType = 'graphic';
+            expect(clip.clipType).to.equal('graphic');
+            expect(project.selection.clipType).to.equal('graphic');
+
+            project.selection.clear();
+            project.selection.select(clip);
+            expect(project.selection.clipType).to.equal('graphic');
+
+            project.selection.clipType = 'movieClip';
+            expect(clip.clipType).to.equal('movieClip');
+            expect(clip.animationType).to.equal('loop');
         });
 
         it ('should maintain animationType state of clip when serialized', function () {

@@ -476,9 +476,8 @@ class EditorCore extends Component {
    * @param {string|number} newValue  New value of the attribute to update.
    */
   setSelectionAttribute = (attribute, newValue) => {
-    this.project.selection[attribute] = newValue;
-    this.projectDidChange({ actionName: "Set Selection Attribute: " + attribute + ":" + newValue});
-  }
+
+}
 
   /**
    * Determines if a given object is selected.
@@ -496,7 +495,7 @@ class EditorCore extends Component {
    *    Default is true, to preserve existing script behavior.
    *    Calling this function with false ensures user doesn't accidentally wrap a Clip within another Clip.
    */
-  createClipFromSelection = (name, wrapSingularClip = true) => {
+  createClipFromSelection = (name, wrapSingularClip = true, clipType = 'graphic') => {
     if (this.project.selection.numObjects === 0) {
       console.log("No selection from which to create clips.");
       return;
@@ -507,7 +506,8 @@ class EditorCore extends Component {
     }
     this.project.createClipFromSelection({
       identifier: name,
-      type: 'Clip'
+      type: 'Clip',
+      clipType: clipType
     });
     this.projectDidChange({ actionName: "Create Clip From Selection" });
   }

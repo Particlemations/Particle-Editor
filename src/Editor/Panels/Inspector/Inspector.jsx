@@ -644,6 +644,17 @@ class Inspector extends Component {
   renderAnimationType = () => {
     return (
       <div className="inspector-item">
+
+        <InspectorSelector
+        tooltip="Clip Type"
+        type="select"
+        options={this.props.getClipTypes()}
+        value={this.getSelectionAttribute('clipType')}
+        onChange={(val) => {
+          this.setSelectionAttribute('clipType', val.value)
+        }}
+      />
+      
         <InspectorSelector
           tooltip="Animation"
           type="select"
