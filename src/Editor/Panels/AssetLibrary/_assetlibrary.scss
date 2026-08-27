@@ -1,0 +1,109 @@
+/*
+ * Copyright 2020 WICKLETS LLC
+ *
+ * This file is part of Wick Editor.
+ *
+ * Wick Editor is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Wick Editor is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Wick Editor.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+@import 'Editor/_wickbrand.scss';
+
+$upload-button-height: 25px;
+$filter-height: 40px;
+
+.asset-library {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: $editor-primary;
+  border-right: $editor-outline-padding solid $editor-primary-outline;
+  border-bottom: $editor-outline-padding solid $editor-primary-outline;
+  margin-bottom: 10px;
+  padding-left: $editor-panel-padding;
+  padding-right: $editor-panel-padding;
+  display: flex;
+  flex-direction: column;
+}
+
+.asset-library-title-container {
+  display: flex;
+  align-items: center;
+  margin-top: $docked-margin;
+}
+
+.asset-library-title-text {
+  color: #FFFFFF; //$editor-primary-property-text;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  width: 200px;
+}
+
+.btn-asset-builtin {
+  width: $upload-button-height;
+  height: $upload-button-height;
+}
+
+.btn-asset-upload {
+  width: $upload-button-height;
+  height: $upload-button-height;
+  margin-right: 5px;
+}
+
+.asset-library-body {
+  height: 100%;
+  background-color: $editor-tertiary;
+  margin-top: $docked-margin;
+  margin-bottom: $editor-panel-padding;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.asset-library-filter {
+  top: 0;
+  width: 100%;
+  height: $filter-height;
+  max-height: $filter-height;
+  background-color: $editor-secondary;
+  display: flex;
+  align-items: center;
+}
+
+.asset-library-filter-icon {
+  height: calc(#{$filter-height} * .5);
+  width: calc(#{$filter-height} * .5);
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.asset-library-asset-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.asset-library-asset-container:hover {
+  overflow-y: auto;
+}
+
+#asset-library-filter-input {
+  background: transparent;
+  border: none;
+  color: #CFCFCF; //$editor-primary-property-text;
+}
+
+#asset-library-filter-input::placeholder {
+  color: #CFCFCF; //$editor-primary-property-text;
+}

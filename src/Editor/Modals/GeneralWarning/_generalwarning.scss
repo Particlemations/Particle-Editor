@@ -1,0 +1,73 @@
+/*
+ * Copyright 2020 WICKLETS LLC
+ *
+ * This file is part of Wick Editor.
+ *
+ * Wick Editor is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Wick Editor is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Wick Editor.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+@import 'Editor/_wickbrand.scss';
+
+
+.general-warning-modal-body {
+  width: 240px;
+  min-width: 240px;  
+  height: 250px;
+  padding: 20px; 
+}
+
+#general-warning-modal-title {
+  font-size: 18px;
+  color: $editor-modal-text-gray;
+  font-weight: bold; 
+  text-align: center;
+  margin-top: 20px; 
+}
+
+#general-warning-modal-interior-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#general-warning-modal-message {
+  width: 100%;
+  color: $editor-modal-text-gray;
+  text-align: center;
+  font-size: 14px; 
+}
+
+#general-warning-modal-footer {
+  width: 100%; 
+  height: 40px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center;
+}
+
+#general-warning-modal-cancel {
+  width: 90px; 
+  height: 100%; 
+}
+
+#general-warning-modal-accept {
+  width: 90px;
+  height: 100%; 
+  margin-left: 18px;
+} 

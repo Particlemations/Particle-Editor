@@ -1,0 +1,195 @@
+/*
+ * Copyright 2020 WICKLETS LLC
+ *
+ * This file is part of Wick Editor.
+ *
+ * Wick Editor is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Wick Editor is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Wick Editor.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+ @import 'Editor/_wickbrand.scss';
+
+ $keyboard-shortcuts-modal-height : 350px;
+ $action-column-width: 45%;
+
+.keyboard-shortcuts-modal-button {
+  height: 28px;
+}
+.keyboard-shortcuts-modal-button-text {
+  height: 24px;
+}
+
+.keyboard-shortcuts-modal-body {
+  width: 100%;
+  height: 100%;
+}
+
+.keyboard-shortcuts-modal-key-cell {
+  justify-content: center; 
+}
+
+#keyboard-shortcuts-modal-title {
+  font-size: 18px;
+  color: $editor-modal-text-gray;
+  font-weight: bold; 
+  text-align: center;
+}
+
+.keyboard-shortcut-key {
+  background: none;
+  border: none;
+  margin: 1px; 
+}
+
+#keyboard-shortcuts-modal-footer {
+  position: absolute;
+  bottom: 18px; 
+  right: 18px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: right; 
+  margin-top:4px; 
+
+}
+
+.keyboard-shortcuts-footer-button-container {
+  width: 80px;
+  margin-left: 8px; 
+}
+
+#keyboard-shortcuts-modal-reset { 
+  margin-left: 0; 
+}
+
+// Found on MDN at https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd
+kbd {
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid #b4b4b4;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+  color: #333;
+  display: inline-block;
+  font-size: .85em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
+ }
+
+ .keyboard-shortcuts-key-icon-container {
+  color: $editor-modal-text-gray; 
+ }
+
+ #keyboard-shortcuts-body {
+   width: 100%;
+   height: 85%;
+   overflow: hidden;
+ }
+
+ .hotkey-action-column {
+   width: $action-column-width;
+   padding-left: 1.5em; 
+   color: $editor-modal-text-gray; 
+ }
+
+ .hotkey-header-column {
+  text-align: left;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  padding-left: .5em; 
+  background-color: $editor-popout-primary; 
+  font-weight: bold;
+  vertical-align: middle;
+  cursor: pointer;
+ }
+
+ .hotkey-header-column:hover {
+  background-color: $editor-popout-secondary; 
+  color: $editor-modal-text-highlight; 
+ }
+
+ .hotkey-column {
+   width: calc(calc(100% - #{$action-column-width}) / 2);
+ }
+
+ .hotkey-column:hover {
+   cursor: pointer;
+   background-color: $editor-popout-secondary;
+ }
+
+.hotkey-column.header {
+  color: white;
+}
+ .hotkey-column.header:hover {
+   cursor: default;
+   background-color: $editor-modal-gray;
+ }
+
+ .hotkey-column.editing {
+   background-color: $wick-yellow-light;
+   color: $wick-yellow-text;
+ }
+
+ .hotkey-column.edited {
+   background-color: $magenta-light;
+   color: black; 
+ }
+
+ tr {
+   width: 100%;
+ }
+
+ thead {
+   color: $editor-popout-secondary-text;
+ }
+
+ table {
+   width: 100%;
+ }
+
+ .tableSection {
+   height: 100%;
+   width: 100%;
+ }
+
+ // Pulled from http://jsfiddle.net/venkateshwar/5KJka/1/
+ table.tableSection {
+  display: table;
+  width: 100%;
+}
+
+table.tableSection thead, table.tableSection tbody {
+  float: left;
+  width: 100%;
+}
+
+table.tableSection tbody {
+  overflow: auto;
+  height: 220px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+table.tableSection tr {
+  width: 100%;
+  display: table;
+  text-align: left;
+  border-bottom: 1px solid black; 
+}
+
+td {
+  border-left: 1px solid black;
+}
+
+

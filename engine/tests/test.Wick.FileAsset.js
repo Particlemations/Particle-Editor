@@ -1,0 +1,3 @@
+describe('Wick.FileAsset', function () {
+    
+});

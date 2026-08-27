@@ -1,0 +1,19 @@
+.wick-frame-picker-button-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.wick-frame-picker-disabled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 5px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(48, 48, 48, 0.5);
+    color: white;
+}

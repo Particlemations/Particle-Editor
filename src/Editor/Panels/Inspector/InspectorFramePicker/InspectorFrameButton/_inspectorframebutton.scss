@@ -1,0 +1,39 @@
+.frameButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: transparent;
+}
+.frameButton:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.frameButton-active {
+    background-color: #426180;
+}
+.frameButton-active:hover {
+    background-color: rgba(66, 97, 128, 0.8);
+}
+
+.frameButton > * {
+    margin: 3px;
+}
+
+.frameButton-image {
+    // Make these not hardcoded sometime
+    width: 60px;
+    height: 60px;
+    background-color: #636363;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.frameButton-image > * {
+    width: 100%;
+    max-height: 100%;
+}
+
+.frameButton-text {
+    margin-left: 5px;
+}

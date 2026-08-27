@@ -1,0 +1,61 @@
+/*
+ * Copyright 2020 WICKLETS LLC
+ *
+ * This file is part of Wick Editor.
+ *
+ * Wick Editor is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Wick Editor is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Wick Editor.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+@import 'Editor/_wickbrand.scss';
+@import '../_inspector.scss';
+
+$script-window-margin: 5px; 
+
+.inspector-script-window-row-container {
+    height: 25px; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    border-radius: 3px;
+    margin-top: $script-window-margin; 
+    margin-left: $script-window-margin;
+    margin-right: $script-window-margin;
+}
+
+.inspector-script-window-container {
+  width: 100%;
+  height: 100px;
+  background-color: $editor-tertiary;
+  border-radius: 3px;
+}
+
+.inspector-script-window-container {
+  height: 100%; 
+  padding-bottom: 5px; 
+}
+
+.inspector-script-window-header {
+  width: 100%; 
+  height: 25px;
+  background-color: $editor-secondary;
+  color: #ffffff; //$editor-secondary-text;
+  text-align: center;
+  vertical-align: center;
+  border-radius: 3px 3px 0px 0px;
+}
+
+.inspector-add-script-button {
+  height: 25px;
+  width: 100%; 
+}

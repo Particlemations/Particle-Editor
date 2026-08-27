@@ -1,0 +1,26 @@
+@import 'Editor/_wickbrand.scss';
+@import '../toolbox.scss';
+
+$setting-splitter-height: 2px;
+$settings-container-width: 70px;
+$setting-height: 70px;
+
+#settings-panel-container {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  align-items: center;
+}
+
+.settings-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brush-modes-widget {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  margin: 1px;
+}

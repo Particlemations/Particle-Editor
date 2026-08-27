@@ -1,0 +1,299 @@
+/*
+ * Copyright 2020 WICKLETS LLC
+ *
+ * This file is part of Wick Editor.
+ *
+ * Wick Editor is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Wick Editor is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Wick Editor.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+@import './_wickbrand.scss';
+
+$menu-bar-height: 40px;
+$toolbox-height: 40px;
+$medium-toolbox-height: 80px;
+$splitter-width: 3px;
+
+body {
+  overflow: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+.toolbox-container {
+  height: $toolbox-height;
+  transition-timing-function: ease-in-out;
+  transition: width .5s, height .5s; 
+}
+
+.toolbox-container-medium {
+  height: $medium-toolbox-height;
+}
+
+.toolbox-container-small {
+  height: $medium-toolbox-height;
+}
+
+.editor-canvas-timeline-panel {
+  height: calc(100% - #{$toolbox-height});
+  transition-timing-function: ease-in-out;
+  transition: width .5s, height .5s; 
+}
+
+.editor-canvas-timeline-panel-medium {
+  height: calc(100% - #{$medium-toolbox-height});
+}
+
+// Small not yet implemented, defaults to medium size. 
+.editor-canvas-timeline-panel-small {
+  height: calc(100% - #{$medium-toolbox-height});
+}
+
+#editor {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+#menu-bar-container {
+  width: 100%;
+  height: $menu-bar-height;
+  background-color: green;
+}
+
+#editor-body {
+  width: 100%;
+  height: calc(100% - #{$menu-bar-height});
+  background-color: blue;
+  overflow: hidden;
+}
+
+#flexible-container {
+  height: calc(100% - #{$menu-bar-height});
+  width: 100%;
+  background-color: #AAA;
+  display: inline-block;
+  position: absolute;
+  top: #{$menu-bar-height};
+}
+
+.center-container {
+  background-color: #ffaabb;
+}
+
+.right-container {
+  background-color: #aabbcc;
+}
+
+.right-reflex-container {
+  height: 100%;
+  background-color: #aabbcc;
+}
+
+// Toasts
+.Toastify__toast {
+  font-family: 'Nunito Sans';
+  font-weight: 800;
+  font-size: 24px;
+  border-radius: 3px;
+}
+
+.Toastify__toast button{
+  font-family: 'Nunito Sans';
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.info-toast-background {
+  background-color: $editor-modal-gray;
+}
+
+.info-toast-background button {
+  color: #FFFFFF;
+}
+
+.info-toast-body {
+  color: #FFFFFF;
+}
+
+.error-toast-background {
+  background-color: #AC1706;//$wick-red-dark;
+}
+
+.error-toast-background button {
+  color: #FFFFFF;
+}
+
+.error-toast-body {
+  color: #FFFFFF;
+}
+
+.warning-toast-background {
+  background-color: $wick-yellow-light;//$wick-yellow-dark;
+}
+
+.warning-toast-background button {
+  color: #000000;
+}
+
+.warning-toast-body {
+  color: #000000;
+}
+
+.success-toast-background {
+  background-color: $wick-green-light;//$wick-green-dark;
+}
+
+.success-toast-background button {
+  color: #000000;
+}
+
+.success-toast-body {
+  color: #000000;
+}
+
+.mobile-editor-body {
+  border-right-width: calc(#{$splitter-width} * 2);
+  border-right-style: solid;
+  border-right-color: $splitter-color !important;
+}
+
+/* Basic re-flex panel/splitter styling */
+
+.reflex-container {
+  justify-content: flex-start;
+  /* align items in Main Axis */
+  align-items: stretch;
+  /* align items in Cross Axis */
+  align-content: stretch;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  /* TWEENER - IE 10 */
+  /* NEW - Chrome */
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%; }
+
+.reflex-container.horizontal {
+  flex-direction: column; }
+
+.reflex-container.vertical {
+  flex-direction: row; }
+
+.reflex-container > .reflex-element {
+  position: relative;
+  overflow: auto;
+  height: 100%;
+  width: 100%; }
+
+.reflex-container.reflex-resizing > .reflex-element {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.reflex-container > .reflex-element > .reflex-size-aware {
+  height: 100%;
+  width: 100%; }
+
+.reflex-container > .reflex-splitter {
+  background-color: $splitter-color;
+  z-index: 0; }
+
+.reflex-container > .reflex-splitter.active,
+.reflex-container > .reflex-splitter:hover {
+  background-color: $splitter-highlight-color;
+  transition: all 1s ease; }
+
+.horizontal > .reflex-splitter {
+  border-bottom: $splitter-width solid $splitter-color !important;
+  border-top: $splitter-width solid $splitter-color !important;
+  cursor: row-resize;
+  width: 100%;
+  height: $splitter-width }
+
+.reflex-element.horizontal .reflex-handle {
+  cursor: row-resize;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.reflex-container.horizontal > .reflex-splitter:hover,
+.reflex-container.horizontal > .reflex-splitter.active {
+  border-bottom: $splitter-width solid $splitter-highlight-color !important;
+  border-top: $splitter-width solid $splitter-highlight-color !important; }
+
+.reflex-container.vertical > .reflex-splitter {
+  border-right: $splitter-width solid $splitter-color !important;
+  border-left: $splitter-width solid $splitter-color !important;
+  cursor: col-resize;
+  height: 100%;
+  width: $splitter-width; }
+
+.reflex-element.vertical .reflex-handle {
+  cursor: col-resize;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.reflex-container.vertical > .reflex-splitter:hover,
+.reflex-container.vertical > .reflex-splitter.active {
+  border-right: $splitter-width solid $splitter-highlight-color !important;
+  border-left: $splitter-width solid $splitter-highlight-color !important; }
+
+.reflex-container > .reflex-splitter.reflex-thin {
+  box-sizing: border-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+  opacity: 0.2;
+  z-index: 0; }
+
+.reflex-container > .reflex-splitter.reflex-thin.active
+.reflex-container > .reflex-splitter.reflex-thin:hover {
+  transition: all 1.5s ease;
+  opacity: 0.5; }
+
+.reflex-container.horizontal > .reflex-splitter.reflex-thin {
+  border-bottom: $splitter-width solid $splitter-color !important;
+  border-top: $splitter-width solid $splitter-color !important;
+  height: $splitter-width;
+  cursor: row-resize;
+  margin: -$splitter-width 0;
+  width: 100%; }
+
+.reflex-container.horizontal > .reflex-splitter.reflex-thin.active,
+.reflex-container.horizontal > .reflex-splitter.reflex-thin:hover {
+  border-bottom: $splitter-width solid $splitter-highlight-color !important;
+  border-top: $splitter-width solid $splitter-highlight-color !important; }
+
+.reflex-container.vertical > .reflex-splitter.reflex-thin {
+  border-right: $splitter-width solid $splitter-color !important;
+  border-left: $splitter-width solid $splitter-color !important;
+  width: $splitter-width !important;
+  cursor: col-resize;
+  margin: 0 -$splitter-width;
+  height: 100%; }
+
+.reflex-container.vertical > .reflex-splitter.reflex-thin.active,
+.reflex-container.vertical > .reflex-splitter.reflex-thin:hover {
+  border-right: $splitter-width solid $splitter-highlight-color !important;
+  border-left: $splitter-width solid $splitter-highlight-color !important; }
+
+.mobile-reflex-splitter {
+  height: 15px !important;
+  border: 3px solid black !important;
+}

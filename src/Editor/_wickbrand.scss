@@ -1,0 +1,341 @@
+/*
+ * Copyright 2020 WICKLETS LLC
+ *
+ * This file is part of Wick Editor.
+ *
+ * Wick Editor is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Wick Editor is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Wick Editor.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+// Define Color Scheme
+
+// Spring 2019 color scheme
+$editor-primary: #303030;
+$editor-primary-text: white; //#AFAFAF;
+$editor-primary-property-text: $editor-primary-text;
+$editor-primary-outline: #191919;
+
+$editor-text-input-background: #4F4F4F;
+$editor-text-input-text: #000000;
+
+$editor-menubar-project-text: #FFFFFF; //#DADADA;
+$editor-menubar-option-text: #E0E0E0; //#BABABA;
+
+$editor-secondary: #3B3B3B;
+$editor-secondary-text: #BDBDBD; //#797979;
+
+$editor-tertiary: #4A4A4A;
+
+$editor-modal-dark: #1E1E1E;
+$editor-modal-gray: #383434; //#3D3B3B;
+$editor-modal-gray-secondary: #525252;
+
+$editor-modal-text-white: #FFFFFF;
+$editor-modal-text-gray: #E6E6E6;
+$editor-modal-text-dark: #a6a6a6;
+$editor-modal-text-highlight: #1EE29A;
+
+$editor-green-highlight: #1EE29A;
+$editor-green-highlight-dark: #19C284;
+
+$editor-canvas-border: #6A6A6A;
+
+$editor-outline-padding: 4px;
+$editor-input-border-width: 3px;
+$editor-panel-padding: 10px;
+
+$editor-popout-primary: #292927;
+$editor-popout-secondary: #353434;
+$editor-popout-tertiary: #3F3D3D;
+
+$editor-popout-primary-text: #FFFFFF;
+$editor-popout-secondary-text: #B1B1B1;
+$editor-popout-tertiary-text: #919191;
+
+// Default palette
+$heather-grey: #F5F5F5;
+$heather-grey-light: #F9F9F9;
+$heather-grey-dark: #EAEAEA;
+$heather-grey-text: black;
+
+$wick-green: #1EE29A;
+$wick-green-light: #29F1A3;
+$wick-green-dark: #01C094;
+$wick-green-text: $editor-primary;
+
+$sleepy-sky: #B4ECE6;
+$sleepy-sky-light: #D3F8F4;
+$sleepy-sky-dark: #8DDED6;
+$sleepy-sky-text: black;
+
+$wick-active-blue: #00ADEF;
+$wick-active-blue-dark: #00709c;
+$wick-active-blue-light: #00B9FF;
+$wick-active-blue-text: $editor-primary;
+
+$deep-cereulian: #101DA5;
+$deep-cereulian-light: #2636E1;
+$deep-cereulian-dark: #010A6F;
+$deep-cereulian-text: white;
+
+$old-navy: #08105B;
+$old-navy-light: #182387;
+$old-navy-dark: #000640;
+$old-navy-text: white;
+
+$magenta: #CB00E4;
+$magenta-light: #E233F7;
+$magenta-dark: #B800CF;
+$magenta-text: white;
+
+$flame: #F66A37;
+$flame-light: #FF7848;
+$flame-dark: #E6460E;
+$flame-text: black;
+
+$wick-red: #F86868; //#FD384C;
+$wick-red-light: #FF8C8C; //#FF5372;
+$wick-red-dark: #E61E07;
+$wick-red-text: black;
+
+$wick-yellow: #FFC835;
+$wick-yellow-light: #FFE243;
+$wick-yellow-dark: #E9AA02;
+$wick-yellow-text: black;
+
+$wick-gray: #4F4F4F;
+$wick-gray-light: #575757;//#5D5D5D;
+$wick-gray-dark: #424242;
+$wick-gray-text: #ffffff;//#848484;
+$wick-gray-text-light: #b6b6b6;
+
+$wick-cool-blue: #89919C;
+$wick-cool-blue-light: #AFD6FF;
+$wick-cool-blue-dark:#5C5F65;
+$wick-cool-blue-text: #353434;
+
+$wick-error-red: #E27663;
+$wick-error-red-light: #FF7867;
+$wick-error-red-dark: #8D564D;
+$wick-error-red-text: #FF7867;
+
+// interface palette
+$interface-primary: #464646; // most background colors
+$interface-primary-text: #FFFFFF; // most text
+
+$interface-secondary: #535353; // interface title headers, some backgrounds
+$interface-secondary-text: #ADADAD; // some text
+
+$interface-tertiary: #919191; // search bars
+$interface-tertiary-text: #626262; // search text
+
+$interface-quaternary: #C4C4C4; // interface background highlights
+
+$interface-input-background: #FFFFFF;
+$interface-input-text: #535353;
+
+$interface-selection: $wick-green-dark;
+$interface-hover: $wick-green;
+$interface-highlight: $wick-green-light;
+
+$interface-tooltip: $sleepy-sky;
+$interface-tooltip-dark: $sleepy-sky-dark;
+$interface-tooltip-light: $sleepy-sky-light;
+
+$interface-tooltip-text: #222222;
+
+$interface-spotlight: $magenta;
+$interface-spotlight-dark: $magenta-dark;
+$interface-spotlight-light: $magenta-light;
+
+$interface-spotlight-text: #FFFFFF;
+
+
+$interface-warning: $flame;
+$interface-warning-dark: $flame-dark;
+$interface-warning-light: $flame-light;
+
+$interface-warning-text: #FFFFFF;
+
+$interface-menu-bar-background: black;
+
+$focus-orange: #FF7867;
+
+// support us colors
+$patreon-orange: #E85B46;
+$patreon-text: white;
+$github-pink: #EC6CB9;
+$github-button: white;
+$github-text: black;
+
+// mobile container colors
+$mobile-panel-background: #191919;
+$timeline-red: #FA8A87;
+$inspector-teal: #4FF7DE;
+$code-pink: #FA73FA;
+$asset-green: #BAFA98;
+
+$inspector-tab-background: #262626;
+$inspector-tab-background-selected: #303030;
+$inspector-tab-underline: #484747;
+
+// Set editor styles.
+a:link {
+  color: $editor-green-highlight;
+}
+
+a:hover {
+  color: $editor-green-highlight-dark;
+}
+
+a {
+  color: $editor-green-highlight;
+}
+
+a:hover {
+  color: $editor-green-highlight-dark;
+}
+
+// React Modal Smooth Transition In-Out
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
+
+// Modal body and overlay information.
+.modal-body {
+  border-radius: 4px;
+  background-color: $editor-modal-gray;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // overflow: hidden;
+  font-family: 'Nunito Sans';
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.mobile-menu-overlay {
+  background-color: rgba(48, 48, 48, 0.95);
+}
+
+.wick-brand-arrow {
+  border: solid $wick-green;
+  border-width: 0 3px 3px 0;
+  border-radius: 2px; 
+  display: inline-block;
+  padding: 3px;
+  margin: 4px;
+}
+
+.arrow-right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.arrow-left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.arrow-up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.arrow-down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+// define Bootstrap 4 button Mixins
+/*button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%))*/
+.btn-wick-warning {
+  background: $interface-warning-dark;
+  border: $interface-warning-dark;
+  color: #000;
+}
+.btn-wick-warning:hover {
+  background: darken($interface-warning-dark, 7.5%);
+  border: darken($interface-warning-dark, 7.5%);
+}
+.btn-wick-warning:active {
+  background: darken($interface-warning-dark, 12.5%);
+  border: darken($interface-warning-dark, 12.5%);
+}
+
+.btn-wick-accept {
+  background: $wick-green-dark;
+  border: $wick-green-dark;
+  color: #000;
+}
+.btn-wick-accept:hover {
+  background: darken($wick-green-dark, 7.5%);
+  border: darken($wick-green-dark, 7.5%);
+}
+.btn-wick-accept:active {
+  background: darken($wick-green-dark, 12.5%);
+  border: darken($wick-green-dark, 12.5%);
+}
+// define interface element properties
+$splitter-size: calc(#{$editor-outline-padding} / 2);
+$splitter-color: $editor-primary-outline;
+$splitter-highlight-color: $editor-primary-property-text;
+
+$interface-roundness-primary: 2px;
+$interface-roundness-secondary: 4px;
+$interface-input-roundness: 5px;
+
+$docked-title-height: 26px;
+$docked-margin: 6px;
+
+// Export some colors to be used in JS in some places (canvas, timeline)
+:export {
+  editorCanvasBorder: $editor-canvas-border;
+}
+
+button:focus, input:focus {
+  //We went with outlines to avoid sizing weirdness,
+  //borders may be good to fit around rounded elements, but 
+  //will require some finagling
+  //border: 2px solid $focus-orange !important;
+  //box-sizing: border-box;
+  outline: 2px solid $focus-orange;
+}
+
+.popover.mobile .arrow {
+  display: none;
+  height: 0;
+}
+.mobile.bs-popover-bottom {
+  margin-top: 2px;
+  margin-left: 2px;
+}

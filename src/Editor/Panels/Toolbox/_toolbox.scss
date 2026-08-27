@@ -1,0 +1,149 @@
+/*
+ * Copyright 2020 WICKLETS LLC
+ *
+ * This file is part of Wick Editor.
+ *
+ * Wick Editor is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Wick Editor is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Wick Editor.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+@import 'Editor/_wickbrand.scss';
+
+$tool-button-margin: 3px;
+$toolbox-max-button-size: 30px;
+
+.tool-box {
+  width: 100%;
+  height: 100%;
+  background-color: $editor-primary;
+  padding-left: 2px;
+  padding-right: 4px;
+  border: $editor-outline-padding solid $editor-primary-outline;
+  border-top: none;
+  border-right: none;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.tool-box-large {
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden; 
+}
+
+.tool-box.tool-box-medium {
+  flex-direction: column;
+  overflow: hidden;
+  height: 80px; 
+}
+
+.medium-toolbox-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 3px solid $editor-primary-outline;
+  width: 100%;
+  height: 50%;
+}
+
+.medium-toolbox-row:last-child {
+  border-bottom: none;
+}
+
+.tool-box-container {
+  height: 100%; 
+  width: 100%;
+  overflow: hidden;
+}
+
+.tool-collection-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 100%;
+}
+
+.toolbox-item {
+  width: $toolbox-max-button-size;
+  max-width: $toolbox-max-button-size;
+  height: $toolbox-max-button-size;
+  margin-left: $tool-button-margin;
+  margin-right: $tool-button-margin;
+}
+.toolbox-item.mobile {
+  margin-right: 0;
+}
+
+.tool-selector-item {
+  margin-top: $tool-button-margin;
+  margin-bottom: $tool-button-margin;
+}
+.tool-selector-item:last-child {
+  margin-bottom: 0;
+}
+
+.toolbox-actions-center {
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-container {
+  cursor: pointer;
+  width: calc(#{$toolbox-max-button-size} * .85);
+  height: calc(#{$toolbox-max-button-size} * .85);
+  float: left;
+  min-width:  calc(#{$toolbox-max-button-size} * .85);
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+}
+
+#tool-box-stroke-color-button {
+  border-radius: 20px;
+}
+
+#tool-box-fill-color-button {
+  border-radius: 20px;
+}
+
+#stroke-color-picker-container {
+  box-sizing: border-box;
+}
+
+.toolbox-actions-right{
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  float: right; 
+}
+
+.toolbox-actions-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolbox-actions-right-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto; 
+  align-items: center;
+  height: 100%;
+}
+
+.bump-up-no-dropdown {
+  margin-bottom: 2.5px;
+}

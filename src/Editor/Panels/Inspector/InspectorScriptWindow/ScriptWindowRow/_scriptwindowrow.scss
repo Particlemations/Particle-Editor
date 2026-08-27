@@ -1,0 +1,50 @@
+@import 'Editor/_wickbrand.scss';
+@import '../_inspectorscriptwindow.scss';
+
+$delete-button-size: 25px;
+$delete-button-padding: 4px;
+
+.inspector-script-window-row-name {
+    width: calc(100% - #{$delete-button-size} - #{$delete-button-padding}); 
+    height: 100%; 
+    background-color: $editor-primary;
+    color: $editor-primary-text;
+    border-radius: 3px;
+    overflow: hidden; 
+    display: flex;
+}
+
+.inspector-script-window-row-edit {
+    width: 25px;
+    height: 100%; 
+    background-color: $editor-primary;
+    color: $editor-primary-text;
+    border-radius: 3px;
+}
+
+.inspector-script-window-row-delete {
+    width: $delete-button-size;
+    height: 100%; 
+    background-color: $editor-primary;
+    color: $editor-primary-text;
+    border-radius: 3px;
+}
+
+.inspector-script-window-row-color-bar {
+    height: 100%;
+    width: $script-window-margin;
+    margin-right: $script-window-margin; 
+}
+
+.inspector-script-window-row-color-bar.blue-bar {
+    background-color: #05B8FF; //$wick-active-blue;
+}
+
+.inspector-script-window-row-color-bar.green-bar {
+    background-color: $wick-green-light; //$wick-green;
+}
+
+.inspector-script-window-row-color-bar.yellow-bar {
+    background-color: #FFE243; //$wick-yellow;
+}
+
