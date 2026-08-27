@@ -929,6 +929,12 @@ Wick.Project = class extends Wick.Base {
      * If the playhead is over an existing frame, that frame will be cut in half,
      * and a blank frame will be added to fill the empty space created by the cut.
      */
+    insertKeyframe () {
+        const timeline = this.focus && this.focus.timeline;
+        if (!timeline || !timeline.activeLayer) return null;
+        return timeline.insertKeyframe();
+    }
+
     insertBlankFrame() {
         var playheadPosition = this.activeTimeline.playheadPosition;
         var newFrames = [];

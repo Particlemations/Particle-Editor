@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright 2020 WICKLETS LLC
  *
  * This file is part of Wick Engine.
@@ -249,6 +249,11 @@ Wick.Timeline = class extends Wick.Base {
      * Adds a tween to a frame on this timeline.
      * @param {Wick.Tween} tween - the tween to add.
      */
+    insertKeyframe () {
+        if (!this.activeLayer) return null;
+        return this.activeLayer.insertKeyframe(this.playheadPosition);
+    }
+
     addTween(tween) {
         if (tween.originalLayerIndex >= this.layers.length) return;
 
@@ -504,3 +509,4 @@ Wick.Timeline = class extends Wick.Base {
         });
     }
 }
+

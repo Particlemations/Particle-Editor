@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright 2020 WICKLETS LLC
  *
  * This file is part of Wick Engine.
@@ -31,10 +31,10 @@ Wick.GUIElement.ActionButtonsContainer = class extends Wick.GUIElement {
         });
 
         this.insertBlankFrameButton = new Wick.GUIElement.ActionButton(this.model, {
-            tooltip: 'Add Frame',
+            tooltip: 'Insert Keyframe',
             icon: 'cut_frame',
             clickFn: () => {
-                this.model.project.insertBlankFrame();
+                this.model.project.insertKeyframe();
                 this.projectWasModified();
             }
         });
@@ -152,3 +152,4 @@ Wick.GUIElement.ActionButtonsContainer = class extends Wick.GUIElement {
         ctx.restore();
     };
 };
+

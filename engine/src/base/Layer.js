@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright 2020 WICKLETS LLC
  *
  * This file is part of Wick Engine.
@@ -190,6 +190,41 @@ Wick.Layer = class extends Wick.Base {
      * Removes a frame from the Layer.
      * @param  {Wick.Frame} frame Frame to remove.
      */
+    insertKeyframe (playheadPosition) {
+        if (!Number.isFinite(playheadPosition) || playheadPosition < 1) {
+            throw new Error('insertKeyframe: valid playheadPosition is required');
+        }
+
+        playheadPosition = Math.floor(playheadPosition);
+
+        var existingFrame = this.getFrameAtPlayheadPosition(playheadPosition);
+
+        if (existingFrame && existingFrame.start === playheadPosition) {
+            return existingFrame;
+        }
+
+        if (!existingFrame) {
+            return this.insertBlankFrame(playheadPosition);
+        }
+
+        var oldEnd = existingFrame.end;
+
+        if (playheadPosition <= existingFrame.start) {
+            return existingFrame;
+        }
+
+        var newFrame = existingFrame.copy();
+
+        existingFrame.end = playheadPosition - 1;
+        newFrame.start = playheadPosition;
+        newFrame.end = oldEnd;
+
+        newFrame.tweens.slice().forEach(tween => tween.remove());
+
+        this.addChild(newFrame);
+
+        return newFrame;
+    }
     removeFrame (frame) {
         this.removeChild(frame);
         this.resolveGaps();
@@ -341,3 +376,5 @@ Wick.Layer = class extends Wick.Base {
         return gaps;
     }
 }
+
+
