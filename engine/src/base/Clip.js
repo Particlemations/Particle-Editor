@@ -51,6 +51,7 @@ Wick.Clip = class extends Wick.Tickable {
         this._singleFrameNumber = 1; // Default to 1, this value is only used if the animation type is single
         this._playedOnce = false;
         this._isSynced = false;
+        this._symbolType = 'movieClip';
 
         this._transformation = args.transformation || new Wick.Transformation();
 
@@ -79,6 +80,7 @@ Wick.Clip = class extends Wick.Tickable {
         data.singleFrameNumber = this._singleFrameNumber;
         data.assetSourceUUID = this._assetSourceUUID;
         data.isSynced = this._isSynced;
+        data.symbolType = this._symbolType;
 
         return data;
     }
@@ -91,7 +93,8 @@ Wick.Clip = class extends Wick.Tickable {
         this._animationType = data.animationType || 'loop';
         this._singleFrameNumber = data.singleFrameNumber || 1;
         this._assetSourceUUID = data.assetSourceUUID;
-        this._isSynced = data.isSynced;
+        this._isSynced = data.isSynced || false;
+        this._symbolType = data.symbolType || (this._isSynced ? 'graphic' : 'movieClip');
 
         this._playedOnce = false;
 
