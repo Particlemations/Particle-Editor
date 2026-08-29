@@ -942,8 +942,26 @@ class Inspector extends Component {
    * Renders the inspector view for clip animation type.
    */
   renderAnimationSetting = () => {
+    let symbolTypeOptions = Object.keys(window.Wick.Clip.symbolTypes).map(key => {
+      return {
+        label: window.Wick.Clip.symbolTypes[key],
+        value: key,
+      };
+    });
+
     return (
       <div className="inspector-content">
+        <div className="inspector-item">
+          <InspectorSelector
+            tooltip="Symbol Type"
+            type="select"
+            options={symbolTypeOptions}
+            value={this.getSelectionAttribute('symbolType')}
+            isSearchable={false}
+            onChange={(val) => {
+              this.setSelectionAttribute('symbolType', val.value);
+            }} />
+        </div>
         {this.renderAnimationType()}
       </div>
     );
